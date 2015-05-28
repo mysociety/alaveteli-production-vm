@@ -82,4 +82,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                                              "alaveteli " \
                                              "alaveteli " \
                                              "#{ ALAVETELI_FQDN }"
+
+  config.vm.provision :shell, :inline => %Q(sed -r -i -e "s,^( *STAGING_SITE:).*,\\1 '0'," /var/www/alaveteli/alaveteli/config/general.yml)
+  config.vm.provision :shell, :inline => %Q(sed -r -i -e "s,^( *RAILS_ENV=).*,\\1production," /etc/init.d/alaveteli)
+  config.vm.provision :shell, :inline => %Q(sudo -u alaveteli echo "ENV['RAILS_ENV'] ||= 'production'" > /var/www/alaveteli/alaveteli/config/rails_env.rb)
 end
