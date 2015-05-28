@@ -2,6 +2,8 @@
 
 VM with Alaveteli installed in production mode for testing.
 
+**We do not recommend Vagrant for real production installs.**
+
 ## Usage
 
     git clone https://github.com/mysociety/alaveteli-production-vm.git
