@@ -86,4 +86,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :inline => %Q(sed -r -i -e "s,^( *STAGING_SITE:).*,\\1 '0'," /var/www/alaveteli/alaveteli/config/general.yml)
   config.vm.provision :shell, :inline => %Q(sed -r -i -e "s,^( *RAILS_ENV=).*,\\1production," /etc/init.d/alaveteli)
   config.vm.provision :shell, :inline => %Q(sudo -u alaveteli echo "ENV['RAILS_ENV'] ||= 'production'" > /var/www/alaveteli/alaveteli/config/rails_env.rb)
+
+  # Re-run the installer to ensure the production settings are applied and
+  # production database created etc
+  config.vm.provision :shell, :inline => "./install-site.sh " \
+                                             "--default " \
+                                             "alaveteli " \
+                                             "alaveteli " \
+                                             "#{ ALAVETELI_FQDN }"
 end
