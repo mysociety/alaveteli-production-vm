@@ -20,4 +20,5 @@ To start the service run `sudo service alaveteli start`.
 
 The service is started in development mode
 [mysociety/alaveteli#2392](https://github.com/mysociety/alaveteli/issues/2392).
-This issue is worked around by additional vagrant provision scripts.
+This issue is worked around by additional vagrant provision scripts (1613df3,
+d0985bf).
