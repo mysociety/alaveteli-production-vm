@@ -5,7 +5,9 @@
 # Usage
 # =====
 #
-# TODO
+#    git clone https://github.com/mysociety/alaveteli-production-vm.git
+#    cd alaveteli-production-vm
+#    vagrant up
 #
 # Customizing the Vagrant instance
 # ================================
