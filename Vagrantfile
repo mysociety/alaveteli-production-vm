@@ -32,8 +32,8 @@
 # =====================
 ALAVETELI_FQDN = ENV['ALAVETELI_VAGRANT_FQDN'] || "192.168.33.156"
 ALAVETELI_IP = ENV['ALAVETELI_VAGRANT_IP'] || "192.168.33.156"
-ALAVETELI_MEMORY = ENV['ALAVETELI_VAGRANT_MEMORY'] || 1536
 ALAVETELI_OS = ENV['ALAVETELI_VAGRANT_OS'] || 'wheezy64'
+ALAVETELI_MEMORY = ENV['ALAVETELI_VAGRANT_MEMORY'] || 2048
 
 SUPPORTED_OPERATING_SYSTEMS = {
   'precise64' => 'https://cloud-images.ubuntu.com/vagrant/precise/current/precise-server-cloudimg-amd64-vagrant-disk1.box',
